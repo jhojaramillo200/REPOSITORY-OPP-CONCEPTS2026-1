@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "blank solution. fronen": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
