@@ -2,27 +2,47 @@
 
 namespace BLANK_SOLUTION_1._BAKEND;
 
-public class time // atrivutos
+public class Time // atrivutos
 {
     private int _hour;
     private int _minute;
     private int _second;
     private int _millisecond;
     // constructores
-    public time()
+    public Time()
     {
-        _hour = 23;
-        _minute = 59;
-        _second = 59;
-        _millisecond = 999;
-    }
-    public time(int hour, int minute, int second, int millisecond)
-    {
-        _hour = hour;
-        _minute = minute;
-        _second = second;
-        _millisecond = millisecond;
+        _hour = 0;
+        _millisecond = 0;
+        _minute = 0;
+        _second = 0;
 
+    }
+
+
+    public Time(int hour)
+    {
+        Hour = hour;
+    }
+
+    public Time(int hour, int minute)
+    {
+        Hour = hour;
+        Minute = minute;
+    }
+
+    public Time(int hour, int minute, int second)
+    {
+        Hour = hour;
+        Minute = minute;
+        Second = second;
+    }
+
+    public Time(int hour, int minute, int second, int millisecond)
+    {
+        Hour = hour;
+        Minute = minute;
+        Second = second;
+        Millisecond = millisecond;
     }
     //propiedades
     public int Hour
@@ -106,13 +126,13 @@ public class time // atrivutos
         }
     }
 
-    public bool IsOtherDay(time other)
+    public bool IsOtherDay(Time other)
     {
         int totalMs = this.ToMilliseconds() + other.ToMilliseconds();
         return totalMs >= 24 * 3600000;
     }
 
-    public time Add(time other)
+    public Time Add(Time other)
     {
         int totalMs = this.ToMilliseconds() + other.ToMilliseconds();
 
@@ -128,7 +148,7 @@ public class time // atrivutos
         int s = (totalMs / 1000);
         int ms = (totalMs % 1000);
 
-        return new time(h, m, s, ms);
+        return new Time(h, m, s, ms);
     }
 
     // Valides
